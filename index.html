@@ -7,6 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokedex</title>
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- Normalize CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
         integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
@@ -18,13 +23,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap" rel="stylesheet">
 
     <!-- Nosso CSS -->
+
+    <link rel="stylesheet" href="/assets/css/colors.css">
     <link rel="stylesheet" href="/assets/css/global.css">
     <link rel="stylesheet" href="/assets/css/pokedex.css">
 </head>
 
 <body>
-    <section class="content">
-        <h1>Pokedex</h1>
+    <section class="content" id="content">
+        <h1 id="titulo">
+            <img src="/assets/imagens/pokedex.png" alt="Pokédex">
+        </h1>
 
         <ol id="pokemonList" class="pokemons">
             <!-- ..... Pokemons here ..... -->
@@ -37,10 +46,46 @@
         </div>
     </section>
 
+    <!-- Detales do Pokemon -->
+    <section id="pokemonCard" class="pokemonCard hidden">
+        <div class="pokedexCard">
+            <div id="currentPokemon" class="">
+                <header>
+                    <i id="arrow-left" class="fa fa-arrow-left"></i>
+                    <i class="fa fa-heart"></i>
+                </header>
+                <div>
+                </div>
+            </div>
+            <nav>
+                <h2 class="active">About</h2>
+                <h2>Base State</h2>
+                <h2>Evolution</h2>
+                <h2>Moves</h2>
+            </nav>
+            <div id="infoPokemon">
+                <ol id="about"></ol>
+                <ol id="baseState"></ol>
+                <ol id="evolution"></ol>
+                <ol id="moves"></ol>
+            </div>
+        </div>
+    </section>
+
+
     <!-- Nosso JS -->
-    <script src="/assets/js/pokemon-model.js"></script>
     <script src="/assets/js/poke-api.js"></script>
     <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/topo.js"></script>
+    <script src="/assets/js/pokemon-model.js"></script>
+    <script src="/assets/js/pokemon-chainEvolutions.js"></script>
+    <script src="/assets/js/pokemon-species.js"></script>
+    <script src="/assets/js/photo-pokemon.js"></script>
+    <script src="/assets/js/New/pokemon-details.js"></script>
+    <script src="/assets/js/New/create-about.js"></script>
+    <script src="/assets/js/New/create-base-state.js"></script>
+    <script src="/assets/js/New/create-evoulution.js"></script>
+    <script src="/assets/js/New/create-moves.js"></script>
 </body>
 
 </html>
