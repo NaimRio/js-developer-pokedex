@@ -57,7 +57,7 @@ function convertPokeApiDetailToPokemon(pokeDetail) {
 
 function convertPokeApiSpeciesToPokeSpecies(pokeS){ //o json passado vem do link https://pokeapi.co/api/v2//pokemon-species/"ID do pokemon"/
   const pokeSpec = new PokeSpecies();
-  pokeSpec.number = parseInt(pokeS.id);
+  pokeSpec.id = parseInt(pokeS.id);
   pokeSpec.name = pokeS.name;
   pokeSpec.evoChainUrl = pokeS.evolution_chain.url; // passa a URL https://pokeapi.co/api/v2/evolution-chain/"ID de evolução diferente do ID do pokemon"/
   return pokeSpec;
@@ -164,5 +164,5 @@ pokeApi.getPokemons = (offset = 0, limit = 10) => {
         .then((pokemons) => pokemons.map(pokeApi.getPokemonDetail))
         .then((detailRequests) => Promise.all(detailRequests))
         .then((pokemonsDetails) => pokemonsDetails)
-        
+
 }

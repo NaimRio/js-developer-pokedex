@@ -15,7 +15,6 @@ async function createEvolution(pokemon) {
   } else {
     evolution.innerHTML += createEvolutionListItem(pokeEsp);
   }
-  
   topo();
 }
 
