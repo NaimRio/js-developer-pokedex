@@ -164,4 +164,5 @@ pokeApi.getPokemons = (offset = 0, limit = 10) => {
         .then((pokemons) => pokemons.map(pokeApi.getPokemonDetail))
         .then((detailRequests) => Promise.all(detailRequests))
         .then((pokemonsDetails) => pokemonsDetails)
+        
 }

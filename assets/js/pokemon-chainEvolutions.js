@@ -3,5 +3,6 @@ class PokeChainEvo {
     number;
     name;
     evoChain = [];
+    
   }
   

@@ -15,5 +15,6 @@ class Pokemon {
     abilities = [];
     speciesUrl;
     moves = [];
+    
   }
   

@@ -27,4 +27,5 @@ function createAbout(pokemon) {
             </li>         
   `;
   topo();
+  
 }

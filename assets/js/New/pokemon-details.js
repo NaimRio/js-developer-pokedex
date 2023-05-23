@@ -68,4 +68,5 @@ function resetActive() {
       "active" && navegation[i].classList.remove("active");
     ols[i].classList.add("hidden");
   }
+  
 }

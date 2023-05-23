@@ -14,5 +14,6 @@ function createMoves(pokemon) {
     
     moves.appendChild(li);
   }
+  
   topo();
 }

@@ -8,6 +8,7 @@ function createBaseState(pokemon) {
   baseState.appendChild(createElementAttribute("Sp. Atk", pokemon.specialAttack));
   baseState.appendChild(createElementAttribute("Sp. Def", pokemon.specialDefense));
   baseState.appendChild(createElementAttribute("Speed", pokemon.speed));
+  
   topo();
 }
 
