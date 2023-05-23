@@ -40,7 +40,7 @@ function convertPokemonToLi(pokemon) {
 
 function loadPokemonItens(offset, limit) {
     const loader = document.getElementById("loader");
-    loader.style.display = "block"; // Mostra o loader
+    loader.style.display = "flex"; // Mostra o loader
 
     pokeApi.getPokemons(offset, limit)
     .then((pokemons = []) => {

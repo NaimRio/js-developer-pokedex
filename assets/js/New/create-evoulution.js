@@ -20,10 +20,10 @@ async function createEvolution(pokemon) {
 
 function createEvolutionListItem(pokemon) {
   return `<li>
-    <div class="evolution">
+    <div id="evolution" class="evolution">
       <div class="img-group">
         <div class="img">
-          <img src="${getPokemonPhoto(pokemon.id)}" alt="${pokemon.name}">
+          <img id="imgPokemon" src="${getPokemonPhoto(pokemon.id)}" alt="${pokemon.name}">
         </div>
         <p>${pokemon.name}</p>
       </div>

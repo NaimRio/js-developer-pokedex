@@ -1,6 +1,7 @@
 const infoPokemon = document.querySelector("#infoPokemon");
 const arrowLeft = document.querySelector("#arrow-left");
 const navegation = document.querySelectorAll("nav h2");
+const evolution = document.querySelector("#evolution");
 
 arrowLeft.addEventListener("click", resetPokemonCard);
 
@@ -68,5 +69,16 @@ function resetActive() {
       "active" && navegation[i].classList.remove("active");
     ols[i].classList.add("hidden");
   }
-  
 }
+
+evolution.addEventListener('click', async (event) => {
+  const clickedElement = event.target;
+  const closestImage = clickedElement.closest('img');
+  const idImg = getUrlId(closestImage.src);
+  const urlPoke = {name:closestImage.alt ,url:'https://pokeapi.co/api/v2/pokemon/'+idImg+'/'};
+  const pokemon = await pokeApi.getPokemonDetail(urlPoke);
+  navegation[2].classList.remove("active");
+  navegation[0].classList.add("active");
+  updatePokemon(pokemon);
+
+})
