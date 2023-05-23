@@ -28,7 +28,7 @@ Foran tuilizados no projeto:
 
 pelo github no link:
 
-<a src='https://github.com/NaimRio/js-developer-pokedex'>Projeto Pokédex</a>
+- [Projeto Pokédex](https://github.com/NaimRio/js-developer-pokedex)
 
 baixe o projeto e abra o arquivo index.html ou use o link abaixo.
 
