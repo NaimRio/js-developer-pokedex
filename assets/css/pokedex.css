@@ -278,6 +278,7 @@
     box-shadow: 3px 1px 2px #222;
     padding: 1rem;
     width: 180px;
+    cursor: pointer;
 }
 
 .pokedexCard #infoPokemon ol li div.img img {
