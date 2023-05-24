@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     list-style: none;
+    cursor: pointer;
 }
 
 .pokemon {
@@ -132,7 +133,8 @@
 }
 
 .pokedexCard .pokemon::before {
-    background: #fff;
+    background: #ffffff;
+    /* background-image: url('/assets/imagens/fundo2.jpg'); */
     content: "";
     position: absolute;
     bottom: 0;
@@ -149,10 +151,10 @@
 }
 
 .pokedexCard .pokemon .number {
-    color: #41414d;
+    color: #000000;
     position: absolute;
-    right: 1rem;
-    font-size: 1rem;
+    right: 2rem;
+    font-size: 1.5rem;
 }
 
 .pokedexCard .pokemon .types .type:first-child {
@@ -160,31 +162,33 @@
 }
 
 .pokedexCard .pokemon .types .type {
-    color: #ccc;
+    color: #ffffff;
     text-align: center;
-    filter: brightness(1.1);
+    filter: brightness(1.15);
     padding: 0.25rem 0.5rem;
-    font-size: 0.625rem;
+    font-size: 0.8rem;
     border-radius: 1rem;
 }
 
 .pokedexCard .pokemon img {
     position: absolute;
-    height: 150px;
-    width: 150px;
-    bottom: 30px;
+    height: 180px;
+    width: 180px;
+    bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
 }
 
 .pokedexCard nav {
-    color: #d3d3d3;
+    background-color: #fff;
+    color: #000000;
     position: relative;
     top: -20px;
     display: flex;
     justify-content: space-around;
     font-size: 0.5rem;
-    border-bottom: 1px solid;
+    /* border-bottom: 1px solid; */
+    border-radius: 2rem;
 }
 
 .pokedexCard nav h2 {
@@ -198,7 +202,7 @@
 }
 
 .pokedexCard nav h2:hover {
-    color: #41414dee;
+    color: #0404a1ee;
     border-bottom: 2px solid;
 }
 
@@ -264,14 +268,16 @@
     gap: 6px;
     justify-content: center;
     position: relative;
+    font-weight: bolder;
 }
 
 .pokedexCard #infoPokemon ol li div.img {
-    border: 1px solid #888;
+    border: 1px solid #000000;
+    background-color: #fff;
     border-radius: 50%;
-    /* box-shadow: 1px 0 2px #222; */
+    box-shadow: 3px 1px 2px #222;
     padding: 1rem;
-    width: 80px;
+    width: 180px;
 }
 
 .pokedexCard #infoPokemon ol li div.img img {
@@ -281,12 +287,15 @@
 
 .pokedexCard #infoPokemon ol.moves {
     display: grid;
-    grid-template-columns: 150px 1fr;
+    grid-template-columns: repeat(2, 4fr);
+    align-items: center;
+    gap: 10px;
+    padding: 0;
 }
 
 .pokedexCard #infoPokemon ol.moves li:nth-child(2n) span {
     border-left: 1px solid #ccc;
-    padding-left: 2rem;
+    padding-left: 1.5rem;
 }
 
 .hidden {
@@ -310,5 +319,11 @@
 @media screen and (min-width: 992px) {
     .pokemons {
         grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 1080px) {
+    .pokemons {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     }
 }

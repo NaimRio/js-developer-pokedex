@@ -4,7 +4,7 @@ const loadMoreButton = document.getElementById('loadMoreButton')
 const pokemonCard = document.querySelector("#pokemonCard");
 const currentPokemon = document.querySelector("#currentPokemon div");
 
-const maxRecords = 151
+const maxRecords = 1281
 const limit = 50;
 let offset = 0;
 
@@ -42,6 +42,10 @@ function loadPokemonItens(offset, limit) {
     const loader = document.getElementById("loader");
     loader.style.display = "flex"; // Mostra o loader
 
+    const btnLoad = document.getElementById("loadMoreButton");
+    btnLoad.innerHTML = "LOADING...";
+
+
     pokeApi.getPokemons(offset, limit)
     .then((pokemons = []) => {
         const newHtmlElement = pokemons.map(convertPokemonToLi)
@@ -49,6 +53,8 @@ function loadPokemonItens(offset, limit) {
     })
     .finally(() => {
         loader.style.display = "none"; // Oculta o loader quando a operação estiver concluída
+
+        btnLoad.innerHTML = "Load More";
     });
 }
 
