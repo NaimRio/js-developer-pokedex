@@ -63,29 +63,6 @@ function convertPokeApiSpeciesToPokeSpecies(pokeS){ //o json passado vem do link
   return pokeSpec;
 }
 
-function getAllFieldsAndValues(json) {
-  const fields = [];
-
-  function traverse(obj) {
-    if (typeof obj === "object" && obj !== null) {
-      if (Array.isArray(obj)) {
-        for (const item of obj) {
-          traverse(item);
-        }
-      } else {
-        for (const key in obj) {
-          fields.push({ field: key, value: obj[key] });
-          traverse(obj[key]);
-        }
-      }
-    }
-  }
-
-  traverse(json);
-
-  return fields;
-}
-
 function getEvoArray(evoArray){
   const array1 = evoArray[3].valeu[0];
   let array2 = [];
@@ -110,11 +87,10 @@ function getUrlId(url){
 
 function convertPokeApiChainToPokeChain(pokeC){ //recebe um json com toda a informação da cadeia de evolução do Pokemon vem do link https://pokeapi.co/api/v2/evolution-chain/"ID de cadeia de evolução"/
   const pokeChain = new PokeChainEvo();
-  const allFields = getAllFieldsAndValues(pokeC); // transforma todos os campos do json em array pq tem campos com nome de numeros e o JS ñ aceita, mas aceita pegar o conteudo pelo passo anterior do array. 
   pokeChain.evoNumber = parseInt(pokeC.id); // ID de cadeia de evolução do Pokemon diferente do ID do Pokemon
   pokeChain.number = getUrlId(pokeC.chain.species.url); // Esse ID é o do Pokemons
   pokeChain.name = pokeC.chain.species.name; // o nome do primeiro link de evolução EX: se o Pokemon for o Charizard o nome q vai aqui é o Charmander
-  const tempIfArray = allFields[3].value;
+  const tempIfArray = pokeC.chain.evolves_to;
   let tempArray2 = [];
   pokeChain.evoChain[0] = {name: pokeChain.name, id: pokeChain.number};
   if (tempIfArray.length != 0){
